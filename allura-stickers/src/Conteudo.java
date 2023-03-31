@@ -15,5 +15,9 @@ public class Conteudo {
         return urlImagem;
     }
 
+    public String get(String string) {
+        return null;
+    }
+
     
 }
