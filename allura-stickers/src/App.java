@@ -9,8 +9,11 @@ public class App {
         //String URL = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
         //ExtratorDeConteudo extrator = new ExtratorDeConteudoDoIMDB();
 
-        String URL = "https://api.nasa.gov/planetary/apod?api_key=dhClp0ahrhqj0WI7GaSef4eJCCKduE8xzmYiSRGx&start_date=2022-06-12&end_date=2022-06-14";
-        ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
+        //String URL = "https://api.nasa.gov/planetary/apod?api_key=dhClp0ahrhqj0WI7GaSef4eJCCKduE8xzmYiSRGx&////start_date=2022-06-12&end_date=2022-06-14";
+        //ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
+
+        String URL = "http://localhost:8080/linguagens";
+        ExtratorDeConteudo extrator = new ExtratorDeConteudoDoIMDB();
 
         var http = new clientHttp();
         String json = http.buscaDados(URL);
@@ -21,7 +24,7 @@ public class App {
         
         //Mostrar os dados
         var geradora = new GeradoraDeFigurinhas();
-        for (int i = 0 ; i < 3 ; i++) {
+        for (int i = 0 ; i < 2 ; i++) {
             Conteudo conteudo = conteudos.get(i);
 
             InputStream inputStream = new URL(conteudo.getUrlImagem()).openStream();
